@@ -23,6 +23,8 @@ function App() {
             );
 
             if (!response.ok) {
+                const errorData = await response.json();
+                console.error(errorData);
                 throw new Error(`GitHub API error: ${response.status}`);
             }
 
