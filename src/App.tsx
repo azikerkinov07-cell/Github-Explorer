@@ -1,3 +1,4 @@
+
 import './styles/App.css';
 import { useState } from 'react';
 import SearchBar from './components/SearchBar';
@@ -13,8 +14,13 @@ function App() {
     async function searchUser(username: string) {
         setError('');
 
+        const trimmedUsername = username.trim();
+        const encodedUsername = encodeURIComponent(trimmedUsername);
+
         try {
-            const response = await fetch(`/api/users/${username.trim()}`);
+            const response = await fetch(
+                `https://api.github.com/users/${encodedUsername}`
+            );
 
             if (!response.ok) {
                 throw new Error(`GitHub API error: ${response.status}`);
@@ -22,7 +28,9 @@ function App() {
 
             const userData: GitHubUser = await response.json();
 
-            const reposResponse = await fetch(`/api/users/${username.trim()}/repos`);
+            const reposResponse = await fetch(
+                `https://api.github.com/users/${encodedUsername}/repos?per_page=100&sort=updated`
+            );
 
             if (!reposResponse.ok) {
                 throw new Error(`Repositories error: ${reposResponse.status}`);
