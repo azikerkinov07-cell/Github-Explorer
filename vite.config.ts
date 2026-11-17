@@ -3,13 +3,5 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
     plugins: [react()],
-    base: '/Github-Explorer/',
-    server: {
-        proxy: {
-            '/api': {
-                target: 'http://localhost:3001',
-                changeOrigin: true
-            }
-        }
-    }
+    base: '/Github-Explorer/'
 });
