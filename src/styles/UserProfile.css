@@ -1,0 +1,40 @@
+.user-profile {
+    padding: 30px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.profile-name {
+    font-size: 30px;
+    letter-spacing: -0.53px;
+}
+
+.profile-github {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: var(--muted);
+}
+
+.profile-github:hover {
+    text-decoration: underline;
+}
+
+.user-profile hr {
+    border: 1px solid var(--border);
+    margin-block: 10px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+    text-align: center;
+}
+
+.repos p, .followers p, .following p {
+    color: var(--muted);
+}

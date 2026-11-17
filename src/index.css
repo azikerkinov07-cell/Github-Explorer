@@ -1,0 +1,31 @@
+:root {
+    --background: #111318;
+    --surface: #191d25;
+    --border: #292e39;
+    --primary: #6366f1;
+    --text: #f1f5f9;
+    --muted: #9298a5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    font-family: "DM Sans", Arial, sans-serif;
+}
+
+button,
+input {
+    font: inherit;
+}
